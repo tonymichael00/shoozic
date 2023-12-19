@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Sidebar from "@/components/Sidebar";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.className} font-medium`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
+          <Sidebar>{children}</Sidebar>
         </ThemeProvider>
       </body>
     </html>
